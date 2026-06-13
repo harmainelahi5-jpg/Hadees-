@@ -98,29 +98,54 @@
                 <div class="hadees"><div class="hadees-title">49. دین آسان ہے</div><div class="arabic">إِنَّ الدِّينَ يُسْرٌ</div><div>بیشک دین آسان ہے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 39 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
                 <div class="hadees"><div class="hadees-title">50. مومن کا معاملہ</div><div class="arabic">عَجَبًا لأَمْرِ الْمُؤْمِنِ</div><div>مومن کا معاملہ عجب ہے، اس کا ہر کام خیر ہے۔ خوشی ملے تو شکر، تکلیف آئے تو صبر۔</div><div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 2999 | راوی: حضرت صہیب رضی اللہ عنہ</div></div>
             </div>
-        </div>
-    <script>
-        function enterSite() {
-            document.getElementById('splashScreen').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-        }
-        function searchHadees() {
-            let input = document.getElementById('searchBox').value.toLowerCase();
-            let hadees = document.getElementsByClassName('hadees');
-            for (let i = 0; i < hadees.length; i++) {
-                let text = hadees[i].innerText.toLowerCase();
-                if (text.includes(input)) {
-                    hadees[i].classList.remove('hidden');
-                } else {
-                    hadees[i].classList.add('hidden');
+        </div><script>
+    // Awaz wala function
+    function speak(text) {
+        window.speechSynthesis.cancel();
+        let msg = new SpeechSynthesisUtterance(text);
+        msg.lang = 'ur-PK';
+        msg.rate = 0.9;
+        window.speechSynthesis.speak(msg);
+    }
+
+    function enterSite() {
+        document.getElementById('splashScreen').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+        speak('السلام علیکم! صحیح بخاری سرچ انجن میں خوش آمدید');
+    }
+
+    function searchHadees() {
+        let input = document.getElementById('searchBox').value.toLowerCase();
+        let hadees = document.getElementsByClassName('hadees');
+        let foundText = '';
+
+        for (let i = 0; i < hadees.length; i++) {
+            let text = hadees[i].innerText.toLowerCase();
+            if (text.includes(input)) {
+                hadees[i].classList.remove('hidden');
+                if (foundText === '') {
+                    let tarjuma = hadees[i].children[2].innerText;
+                    foundText = tarjuma;
                 }
+            } else {
+                hadees[i].classList.add('hidden');
             }
         }
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('searchBox').addEventListener('keyup', function(event) {
-                if (event.key === 'Enter') { searchHadees(); }
-            });
+
+        if (input && foundText) {
+            speak(foundText);
+        } else if (input &&!foundText) {
+            speak('معاف کیجیے، یہ حدیث نہیں ملی');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('searchBox').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') { searchHadees(); }
         });
-    </script>
-</body>
+    });
+        </script>
+
+        
+</bod
                     </html>
