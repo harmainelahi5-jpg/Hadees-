@@ -119,31 +119,38 @@ DOCTYPE html>
                 <div class="hadees"><div class="hadees-title">46. بہترین صدقہ</div><div class="arabic">أَفْضَلُ الصَّدَقَةِ أَنْ تُشْبِعَ كَبِدًا جَائِعًا</div><div>سب سے بہتر صدقہ بھوکے کو کھانا کھلانا ہے۔</div><div class="hadees-info">حوالہ: شعب الایمان بیہقی | راوی: حضرت انس رضی اللہ عنہ</div></div>
                 <div class="hadees"><div class="hadees-title">47. رشتے جوڑنا</div><div class="arabic">لَيْسَ الْوَاصِلُ بِالْمُكَافِئِ</div><div>صلہ رحمی کرنے والا وہ نہیں جو بدلے میں کرے، بلکہ وہ ہے کہ جب رشتہ توڑا جائے تو جوڑے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 5991 | راوی: حضرت عبداللہ بن عمرو رضی اللہ عنہما</div></div>
                 <div class="hadees"><div class="hadees-title">48. دعا عبادت ہے</div><div class="arabic">الدُّعَاءُ هُوَ الْعِبَادَةُ</div><div>دعا ہی عبادت ہے۔</div><div class="hadees-info">حوالہ: سنن ترمذی، حدیث نمبر 2969 | راوی: حضرت نعمان بن بشیر رضی اللہ عنہ</div></div>    <script>
-        // Awaz wala function - FORCE MALE
-        let urduVoice = null;
-
-        window.speechSynthesis.onvoiceschanged = () => {
-            let voices = window.speechSynthesis.getVoices();
-            urduVoice = voices.find(voice => voice.lang === 'ur-PK');
-        };
-
-        function speak(text){
-            window.speechSynthesis.cancel();
-            let msg = new SpeechSynthesisUtterance(text);
-            msg.lang = 'ur-PK';
-            msg.rate = 0.7; // Bohat slow
-            msg.pitch = 0.1; // Bilkul bhari awaz
-            msg.volume = 1;
-            if (urduVoice) msg.voice = urduVoice;
-            window.speechSynthesis.speak(msg);
-        }
-
+                        <div class="hadees"><div class="hadees-title">26. غیبت</div><div class="arabic">ذِكْرُكَ أَخَاكَ بِمَا يَكْرَهُ</div><div>اپنے بھائی کا ذکر اس طرح کرنا جو اسے ناپسند ہو۔</div><div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 2589 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">27. صبر</div><div class="arabic">مَا أُعْطِيَ أَحَدٌ عَطَاءً خَيْرًا مِنَ الصَّبْرِ</div><div>کسی کو صبر سے بہتر عطا نہیں دی گئی۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 1469 | راوی: حضرت ابو سعید خدری رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">28. قرض</div><div class="arabic">مَطْلُ الْغَنِيِّ ظُلْمٌ</div><div>مالدار کا قرض ادا کرنے میں ٹال مٹول ظلم ہے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 2287 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">29. راستے کا حق</div><div class="arabic">إِيَّاكُمْ وَالْجُلُوسَ عَلَى الطُّرُقَاتِ</div><div>راستوں پہ بیٹھنے سے بچو۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 2465 | راوی: حضرت ابو سعید خدری رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">30. حدیث جبریل</div><div class="arabic">الإِسْلاَمُ أَنْ تَشْهَدَ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ</div><div>اسلام یہ ہے کہ تو گواہی دے کہ اللہ کے سوا کوئی معبود نہیں۔</div><div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 8 | راوی: حضرت عمر رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">31. محبت کا معیار</div><div class="arabic">لاَ يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ</div><div>کوئی مومن نہیں ہو سکتا جب تک اپنے بھائی کے لیے وہی پسند نہ کرے جو اپنے لیے پسند کرتا ہے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 13 | راوی: حضرت انس رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">32. زمین پر رحم</div><div class="arabic">ارْحَمُوا مَنْ فِي الأَرْضِ</div><div>زمین والوں پر رحم کرو، آسمان والا تم پر رحم کرے گا۔</div><div class="hadees-info">حوالہ: سنن ترمذی، حدیث نمبر 1924 | راوی: حضرت عبداللہ بن عمرو رضی اللہ عنہما</div></div>
+                <div class="hadees"><div class="hadees-title">33. جھوٹی گواہی</div><div class="arabic">أَلاَ وَقَوْلُ الزُّورِ</div><div>خبردار! جھوٹی بات اور جھوٹی گواہی۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 2654 | راوی: حضرت ابو بکرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">34. نرمی</div><div class="arabic">إِنَّ اللَّهَ رَفِيقٌ يُحِبُّ الرِّفْقَ</div><div>اللہ نرم ہے اور ہر کام میں نرمی کو پسند کرتا ہے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 6024 | راوی: حضرت عائشہ رضی اللہ عنہا</div></div>
+                <div class="hadees"><div class="hadees-title">35. بیمار پرسی</div><div class="arabic">حَقُّ الْمُسْلِمِ عَلَى الْمُسْلِمِ خَمْسٌ</div><div>مسلمان کا مسلمان پر 5 حق ہیں: سلام، بیمار پرسی، جنازہ، دعوت، چھینک کا جواب۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 1240 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">36. والدین کی نافرمانی</div><div class="arabic">الإِشْرَاكُ بِاللَّهِ، وَعُقُوقُ الْوَالِدَيْنِ</div><div>سب سے بڑے گناہ: شرک اور والدین کی نافرمانی۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 2654 | راوی: حضرت ابو بکرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">37. منافق کی نشانیاں</div><div class="arabic">آيَةُ الْمُنَافِقِ ثَلاَثٌ</div><div>منافق کی 3 نشانیاں: جھوٹ بولے، وعدہ خلافی کرے، امانت میں خیانت کرے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 33 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">38. ظلم سے بچو</div><div class="arabic">اتَّقُوا الظُّلْمَ فَإِنَّ الظُّلْمَ ظُلُمَاتٌ</div><div>ظلم سے بچو، ظلم قیامت کے دن اندھیریاں ہوں گی۔</div><div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 2578 | راوی: حضرت جابر رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">39. روزہ ڈھال ہے</div><div class="arabic">الصِّيَامُ جُنَّةٌ</div><div>روزہ ڈھال ہے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 1894 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">40. جنت کی ضمانت</div><div class="arabic">مَنْ يَضْمَنْ لِي مَا بَيْنَ لَحْيَيْهِ</div><div>جو اپنی زبان اور شرمگاہ کی حفاظت کی ضمانت دے، میں اسے جنت کی ضمانت دیتا ہوں۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 6474 | راوی: حضرت سہل بن سعد رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">41. آسانیاں پیدا کرو</div><div class="arabic">يَسِّرُوا وَلاَ تُعَسِّرُوا</div><div>آسانیاں پیدا کرو، مشکل نہ بناؤ۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 69 | راوی: حضرت انس رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">42. حسد سے بچو</div><div class="arabic">إِيَّاكُمْ وَالْحَسَدَ</div><div>حسد سے بچو، حسد نیکیوں کو کھا جاتا ہے۔</div><div class="hadees-info">حوالہ: سنن ابو داؤد، حدیث نمبر 4903 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">43. عورت سے اچھا سلوک</div><div class="arabic">اسْتَوْصُوا بِالنِّسَاءِ خَيْرًا</div><div>عورتوں کے بارے میں بھلائی کی وصیت قبول کرو۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 5186 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">44. فجر کی نماز</div><div class="arabic">مَنْ صَلَّى الصُّبْحَ فَهُوَ فِي ذِمَّةِ اللَّهِ</div><div>جس نے فجر کی نماز پڑھی وہ اللہ کی حفاظت میں ہے۔</div><div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 657 | راوی: حضرت جندب رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">45. صدقہ گناہ مٹاتا ہے</div><div class="arabic">الصَّدَقَةُ تُطْفِئُ الْخَطِيئَةَ</div><div>صدقہ گناہوں کو اس طرح بجھا دیتا ہے جیسے پانی آگ کو۔</div><div class="hadees-info">حوالہ: سنن ترمذی، حدیث نمبر 614 | راوی: حضرت معاذ بن جبل رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">46. بہترین صدقہ</div><div class="arabic">أَفْضَلُ الصَّدَقَةِ أَنْ تُشْبِعَ كَبِدًا جَائِعًا</div><div>سب سے بہتر صدقہ بھوکے کو کھانا کھلانا ہے۔</div><div class="hadees-info">حوالہ: شعب الایمان بیہقی | راوی: حضرت انس رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">47. رشتے جوڑنا</div><div class="arabic">لَيْسَ الْوَاصِلُ بِالْمُكَافِئِ</div><div>صلہ رحمی کرنے والا وہ نہیں جو بدلے میں کرے، بلکہ وہ ہے کہ جب رشتہ توڑا جائے تو جوڑے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 5991 | راوی: حضرت عبداللہ بن عمرو رضی اللہ عنہما</div></div>
+                <div class="hadees"><div class="hadees-title">48. دعا عبادت ہے</div><div class="arabic">الدُّعَاءُ هُوَ الْعِبَادَةُ</div><div>دعا ہی عبادت ہے۔</div><div class="hadees-info">حوالہ: سنن ترمذی، حدیث نمبر 2969 | راوی: حضرت نعمان بن بشیر رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">49. دین آسان ہے</div><div class="arabic">إِنَّ الدِّينَ يُسْرٌ</div><div>بیشک دین آسان ہے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 39 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
+                <div class="hadees"><div class="hadees-title">50. مومن کا معاملہ</div><div class="arabic">عَجَبًا لأَمْرِ الْمُؤْمِنِ</div><div>مومن کا معاملہ عجب ہے، اس کا ہر کام خیر ہے۔ خوشی ملے تو شکر، تکلیف آئے تو صبر۔</div><div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 2999 | راوی: حضرت صہیب رضی اللہ عنہ</div></div>
+            </div>
+        </div>
+    <script>
         function enterSite() {
             document.getElementById('splashScreen').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
-            speak('السلام علیکم! صحیح بخاری سرچ انجن میں خوش آمدید');
         }
-
         function searchHadees() {
             let input = document.getElementById('searchBox').value.toLowerCase();
             let hadees = document.getElementsByClassName('hadees');
@@ -163,6 +170,4 @@ DOCTYPE html>
         });
     </script>
 </body>
-        </html>
-                <div class="hadees"><div class="hadees-title">49. دین آسان ہے</div><div class="arabic">إِنَّ الدِّينَ يُسْرٌ</div><div>بیشک دین آسان ہے۔</div><div class="hadees-info">حوالہ: صحیح بخاری، حدیث نمبر 39 | راوی: حضرت ابو ہریرہ رضی اللہ عنہ</div></div>
-                <
+</html>
