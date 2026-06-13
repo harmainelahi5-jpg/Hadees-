@@ -99,14 +99,27 @@
                 <div class="hadees"><div class="hadees-title">50. مومن کا معاملہ</div><div class="arabic">عَجَبًا لأَمْرِ الْمُؤْمِنِ</div><div>مومن کا معاملہ عجب ہے، اس کا ہر کام خیر ہے۔ خوشی ملے تو شکر، تکلیف آئے تو صبر۔</div><div class="hadees-info">حوالہ: صحیح مسلم، حدیث نمبر 2999 | راوی: حضرت صہیب رضی اللہ عنہ</div></div>
             </div>
         </div>
-        script>
-    // Awaz wala function
+            // Awaz wala function - FORCE MALE
+    let urduVoice = null;
+
+    window.speechSynthesis.onvoiceschanged = () => {
+        let voices = window.speechSynthesis.getVoices();
+        urduVoice = voices.find(voice => voice.lang === 'ur-PK') || voices[0];
+    };
+
     function speak(text) {
         window.speechSynthesis.cancel();
         let msg = new SpeechSynthesisUtterance(text);
         msg.lang = 'ur-PK';
-        msg.rate = 0.9;
-        window.speechSynthesis.speak(msg)
+        msg.rate = 0.7; // Bohat slow
+        msg.pitch = 0.1; // Bilkul bhari awaz - Male
+        msg.volume = 1;
+
+        if (urduVoice) msg.voice = urduVoice;
+
+        window.speechSynthesis.speak(msg);
+    }
+        
     
     }
 
